@@ -1,0 +1,37 @@
+<form [formGroup]="carForm" (ngSubmit) ="createcar()">
+    <p>    
+        <label>
+        marque voiture:
+        <input type="text" formControlName="marque">
+      </label></p>
+
+  <p>   
+       <label>
+    numero d'immatriculation:
+    <input type="text" formControlName="numeroImmatriculation" >
+  </label></p>
+
+    <p>    
+        <label>
+        nombre de sièges:
+        <input type="text" formControlName="nombreSieges">
+      </label></p>
+
+    <p>    
+        <label>
+        couleur de la voiture:
+        <input type="text" formControlName="CouleurVoiture">
+      </label></p>
+
+    <p>
+        <button 
+        type="submit"
+        class="btn btn-primary"
+        [disabled]="this.carForm.controls.marque.value ==''
+        || this.carForm.controls.numeroImmatriculation.value == '' 
+        || this.carForm.controls.nombreSieges.value == ''
+        || this.carForm.controls.CouleurVoiture.value == '' "    
+        >ajouter voiture</button>
+    </p>
+
+  </form>
